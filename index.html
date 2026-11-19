@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>CPHIA 2026 | Metro Catering Menu</title>
+
+  <style>
+    :root {
+      --black: #101010;
+      --gold: #d8b45d;
+      --cream: #faf7f0;
+      --green: #24543a;
+      --muted: #77736b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: #24211c;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero {
+      background: radial-gradient(
+        ellipse at 50% -40%,
+        #34302a 0%, #151515 55%, #080808 100%
+      );
+      color: white;
+      text-align: center;
+      padding: 28px 18px 50px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .brandline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 24px;
+    }
+
+    .metro {
+      width: 106px;
+      height: 106px;
+      object-fit: contain;
+      border: 1px solid #b99443;
+    }
+
+    .brand-divider {
+      height: 62px;
+      width: 1px;
+      background: #b99443;
+    }
+
+    .africa {
+      width: 168px;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font: normal 53px Georgia, serif;
+      margin: 0 0 12px;
+      color: #f5e9ca;
+    }
+
+    .hero .sub {
+      font-size: 14px;
+      color: #d5cfc3;
+    }
+
+    .goldline {
+      width: 72px;
+      height: 2px;
+      background: var(--gold);
+      margin: 23px auto 0;
+    }
+
+    .wrap {
+      max-width: 850px;
+      margin: auto;
+      padding: 0 18px 60px;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 29px auto 25px;
+    }
+
+    .intro h2 {
+      font: normal 27px Georgia, serif;
+      margin: 0 0 9px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #faf7f0;
+      padding: 13px 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .tabs a {
+      white-space: nowrap;
+      text-decoration: none;
+      border: 1px solid #d9cda9;
+      background: white;
+      border-radius: 99px;
+      color: #3b3020;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 11px 15px;
+    }
+
+    .tabs a:first-child {
+      background: #151515;
+      color: var(--gold);
+      border-color: #151515;
+    }
+
+    section {
+      scroll-margin-top: 75px;
+      margin: 25px 0 36px;
+    }
+
+    .sectionhead {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .number {
+      font: italic 22px Georgia, serif;
+      color: #b38b36;
+    }
+
+    .sectionhead h2 {
+      font: normal 27px Georgia, serif;
+      margin: 0;
+    }
+
+    .sectionhead::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: #d8c697;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid #e9dfc9;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 9px 25px #3326120c;
+    }
+
+    .item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: 1px solid #f0ebe1;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+    }
+
+    .item h3 {
+      font-size: 15px;
+      margin: 0 0 6px;
+      line-height: 1.35;
+    }
+
+    .item p {
+      margin: 0;
+      color: #817b71;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .price {
+      white-space: nowrap;
+      color: #99701e;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .price small {
+      font-size: 10px;
+      font-weight: 500;
+      color: #877e6c;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+
+    footer {
+      background: #0b0b0b;
+      color: #d7c9a7;
+      text-align: center;
+      padding: 31px 15px;
+      border-top: 3px solid var(--gold);
+    }
+
+    footer strong {
+      color: var(--gold);
+      font: normal 23px Georgia, serif;
+      letter-spacing: 2px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #b8ac92;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 44px; }
+      .metro { width: 88px; height: 88px; }
+      .africa { width: 142px; height: 74px; }
+      .item { padding: 18px 15px; }
+      .item h3 { font-size: 14px; }
+      .price { font-size: 14px; }
+      .sectionhead h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="brandline">
+      <img class="metro"
+           src="images/metro-logo.jpg"
+           alt="Metro Catering Logo">
+
+      <div class="brand-divider"></div>
+
+      <img class="africa"
+           src="images/africa-cdc-logo.jpg"
+           alt="Africa CDC Logo">
+    </div>
+
+    <p class="eyebrow">CPHIA 2026 | EVENT DINING</p>
+    <h1>Our Menu</h1>
+    <p class="sub">Thoughtfully prepared by Metro Catering</p>
+    <div class="goldline"></div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="intro">
+      <h2>Welcome to the Table</h2>
+      <p>
+        Explore freshly prepared meals and refreshments
+        for your event. All prices are in Ethiopian Birr (ETB).
+      </p>
+    </div>
+
+    <nav class="tabs">
+      <a href="#lunch">Lunch Buffets</a>
+      <a href="#sandwiches">Sandwiches & Wraps</a>
+      <a href="#drinks">Refreshments & Drinks</a>
+    </nav>
+
+    <section id="lunch">
+      <div class="sectionhead">
+        <span class="number">01</span>
+        <h2>Lunch Buffets</h2>
+      </div>
+
+      <div class="panel">
+        <div class="item">
+          <div>
+            <h3>Standard Buffet</h3>
+            <p>Two main courses, sides and salad</p>
+          </div>
+          <div class="price">1,700 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Deluxe Buffet</h3>
+            <p>Three main dishes, salads, dessert and soft drinks</p>
+          </div>
+          <div class="price">2,000 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Premium Buffet</h3>
+            <p>Four main dishes, salads, dessert and soft drinks</p>
+          </div>
+          <div class="price">2,300 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Ethiopian Special</h3>
+            <p>Doro Wet, Tibs, Ayeb (traditional cheese)</p>
+          </div>
+          <div class="price">1,700 <small>ETB</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sandwiches">
+      <div class="sectionhead">
+        <span class="number">02</span>
+        <h2>Sandwiches & Wraps</h2>
+      </div>
+
+      <div class="panel">
+        <div class="item">
+          <div>
+            <h3>Steak Sandwich</h3>
+            <p>Served with French fries or salad</p>
+          </div>
+          <div class="price">1,800 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Grilled Chicken Sandwich</h3>
+            <p>Served with French fries or salad</p>
+          </div>
+          <div class="price">1,500 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Cheeseburger</h3>
+            <p>Served with French fries or salad</p>
+          </div>
+          <div class="price">1,400 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <h3>Chicken Wrap</h3>
+            <p>Served with French fries or salad</p>
+          </div>
+          <div class="price">1,500 <small>ETB</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="drinks">
+      <div class="sectionhead">
+        <span class="number">03</span>
+        <h2>Refreshments & Drinks</h2>
+      </div>
+
+      <div class="panel">
+        <div class="item">
+          <h3>Continental Package</h3>
+          <div class="price">900 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Mini Burgers</h3>
+          <div class="price">800 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Water</h3>
+          <div class="price">100 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Soft Drinks</h3>
+          <div class="price">20 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Fresh Juice</h3>
+          <div class="price">400 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Coffee</h3>
+          <div class="price">200 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Milk / Café Latte</h3>
+          <div class="price">300 <small>ETB</small></div>
+        </div>
+
+        <div class="item">
+          <h3>Tea</h3>
+          <div class="price">200 <small>ETB</small></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="note">
+      Menu and prices are displayed as supplied for the event.
+    </p>
+
+  </main>
+
+  <footer>
+    <strong>METRO CATERING</strong>
+    <p>We Cater, You Celebrate!</p>
+  </footer>
+
+</body>
+</html>
