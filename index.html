@@ -5,20 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <title>CPHIA 2026 | Metro Catering Menu</title>
+  <meta name="description" content="Metro Catering Menu for CPHIA 2026">
+  <title>MENU for CPHIA 2026 | Metro Catering</title>
 
   <style>
     :root {
       --black: #101010;
       --gold: #d8b45d;
       --cream: #faf7f0;
-      --green: #24543a;
       --muted: #77736b;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -30,7 +34,9 @@
     .hero {
       background: radial-gradient(
         ellipse at 50% -40%,
-        #34302a 0%, #151515 55%, #080808 100%
+        #34302a 0%,
+        #151515 55%,
+        #080808 100%
       );
       color: white;
       text-align: center;
@@ -74,7 +80,7 @@
     }
 
     .hero h1 {
-      font: normal 53px Georgia, serif;
+      font: normal 46px Georgia, serif;
       margin: 0 0 12px;
       color: #f5e9ca;
     }
@@ -117,11 +123,12 @@
       position: sticky;
       top: 0;
       z-index: 5;
-      background: #faf7f0;
+      background: var(--cream);
       padding: 13px 0;
       display: flex;
       gap: 8px;
       overflow-x: auto;
+      scrollbar-width: thin;
     }
 
     .tabs a {
@@ -152,11 +159,6 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 16px;
-    }
-
-    .number {
-      font: italic 22px Georgia, serif;
-      color: #b38b36;
     }
 
     .sectionhead h2 {
@@ -192,6 +194,11 @@
       border-bottom: none;
     }
 
+    .item-info {
+      min-width: 0;
+      flex: 1;
+    }
+
     .item h3 {
       font-size: 15px;
       margin: 0 0 6px;
@@ -210,6 +217,7 @@
       color: #99701e;
       font-weight: 800;
       font-size: 15px;
+      text-align: right;
     }
 
     .price small {
@@ -245,14 +253,51 @@
       margin-top: 10px;
     }
 
+    .contact {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact a {
+      color: #e5c77c;
+      text-decoration: none;
+    }
+
     @media (max-width: 520px) {
-      .hero h1 { font-size: 44px; }
-      .metro { width: 88px; height: 88px; }
-      .africa { width: 142px; height: 74px; }
-      .item { padding: 18px 15px; }
-      .item h3 { font-size: 14px; }
-      .price { font-size: 14px; }
-      .sectionhead h2 { font-size: 24px; }
+      .hero h1 {
+        font-size: 35px;
+      }
+
+      .metro {
+        width: 88px;
+        height: 88px;
+      }
+
+      .africa {
+        width: 142px;
+        height: 74px;
+      }
+
+      .item {
+        padding: 18px 15px;
+      }
+
+      .item h3 {
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+
+      .sectionhead h2 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -261,20 +306,24 @@
 
   <header class="hero">
     <div class="brandline">
-      <img class="metro"
-           src="images/metro-logo.jpg"
-           alt="Metro Catering Logo">
+      <img
+        class="metro"
+        src="images/metro-logo.jpg"
+        alt="Metro Catering Logo"
+      >
 
       <div class="brand-divider"></div>
 
-      <img class="africa"
-           src="images/africa-cdc-logo.jpg"
-           alt="Africa CDC Logo">
+      <img
+        class="africa"
+        src="images/africa-cdc-logo.jpg"
+        alt="Africa CDC Logo"
+      >
     </div>
 
-    <p class="eyebrow">CPHIA 2026 | EVENT DINING</p>
-    <h1>Our Menu</h1>
-    <p class="sub">Thoughtfully prepared by Metro Catering</p>
+    <p class="eyebrow">CPHIA 2026</p>
+    <h1>MENU for CPHIA 2026</h1>
+    <p class="sub">Prepared by Metro Catering</p>
     <div class="goldline"></div>
   </header>
 
@@ -283,150 +332,206 @@
     <div class="intro">
       <h2>Welcome to the Table</h2>
       <p>
-        Explore freshly prepared meals and refreshments
-        for your event. All prices are in Ethiopian Birr (ETB).
+        Explore our selection of meals and refreshments.
+        All prices are in Ethiopian Birr (ETB).
       </p>
     </div>
 
-    <nav class="tabs">
-      <a href="#lunch">Lunch Buffets</a>
-      <a href="#sandwiches">Sandwiches & Wraps</a>
-      <a href="#drinks">Refreshments & Drinks</a>
+    <nav class="tabs" aria-label="Menu categories">
+      <a href="#lunch">Lunch</a>
+      <a href="#sandwiches">Sandwiches and Wrap</a>
+      <a href="#drinks">Refreshment and Drinks</a>
     </nav>
 
+    <!-- LUNCH -->
     <section id="lunch">
       <div class="sectionhead">
-        <span class="number">01</span>
-        <h2>Lunch Buffets</h2>
+        <h2>Lunch</h2>
       </div>
 
       <div class="panel">
+
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Standard Buffet</h3>
-            <p>Two main courses, sides and salad</p>
+            <p>
+              Two main dishes, side dishes,
+              salad and soft drinks
+            </p>
           </div>
-          <div class="price">1,700 <small>ETB</small></div>
+          <div class="price">1,900.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Deluxe Buffet</h3>
-            <p>Three main dishes, salads, dessert and soft drinks</p>
+            <p>
+              Three main dishes, salads,
+              dessert and soft drinks
+            </p>
           </div>
-          <div class="price">2,000 <small>ETB</small></div>
+          <div class="price">2,100.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Premium Buffet</h3>
-            <p>Four main dishes, salads, dessert and soft drinks</p>
+            <p>
+              Four main dishes, salads,
+              dessert and soft drinks
+            </p>
           </div>
-          <div class="price">2,300 <small>ETB</small></div>
+          <div class="price">2,300.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
-            <h3>Ethiopian Special</h3>
-            <p>Doro Wet, Tibs, Ayeb (traditional cheese)</p>
+          <div class="item-info">
+            <h3>Ethiopian Combo</h3>
+            <p>
+              Doro Wet, Tibs, Ayeb
+              (Traditional Cheese) and drinks
+            </p>
           </div>
-          <div class="price">1,700 <small>ETB</small></div>
+          <div class="price">1,700.00 <small>ETB</small></div>
         </div>
+
+        <div class="item">
+          <div class="item-info">
+            <h3>Traditional Fasting Combo</h3>
+          </div>
+          <div class="price">900.00 <small>ETB</small></div>
+        </div>
+
       </div>
     </section>
 
+    <!-- SANDWICHES AND WRAP -->
     <section id="sandwiches">
       <div class="sectionhead">
-        <span class="number">02</span>
-        <h2>Sandwiches & Wraps</h2>
+        <h2>Sandwiches and Wrap</h2>
       </div>
 
       <div class="panel">
+
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Steak Sandwich</h3>
-            <p>Served with French fries or salad</p>
+            <p>With French fries/salad</p>
           </div>
-          <div class="price">1,800 <small>ETB</small></div>
+          <div class="price">1,800.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Grilled Chicken Sandwich</h3>
-            <p>Served with French fries or salad</p>
+            <p>With French fries/salad</p>
           </div>
-          <div class="price">1,500 <small>ETB</small></div>
+          <div class="price">1,500.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
-            <h3>Cheeseburger</h3>
-            <p>Served with French fries or salad</p>
+          <div class="item-info">
+            <h3>Cheese Burger</h3>
+            <p>With French fries/salad</p>
           </div>
-          <div class="price">1,400 <small>ETB</small></div>
+          <div class="price">1,400.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <div>
+          <div class="item-info">
             <h3>Chicken Wrap</h3>
-            <p>Served with French fries or salad</p>
+            <p>With French fries/salad</p>
           </div>
-          <div class="price">1,500 <small>ETB</small></div>
+          <div class="price">1,500.00 <small>ETB</small></div>
         </div>
+
       </div>
     </section>
 
+    <!-- REFRESHMENT AND DRINKS -->
     <section id="drinks">
       <div class="sectionhead">
-        <span class="number">03</span>
-        <h2>Refreshments & Drinks</h2>
+        <h2>Refreshment and Drinks</h2>
       </div>
 
       <div class="panel">
+
         <div class="item">
-          <h3>Continental Package</h3>
-          <div class="price">900 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Refreshment Package</h3>
+            <p>
+              Croissant, muffin, donuts, cookies,
+              coffee/milk/tea
+            </p>
+          </div>
+          <div class="price">800.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Mini Burgers</h3>
-          <div class="price">800 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Fasting Refreshment</h3>
+            <p>
+              Fasting Brownie, Banana cake,
+              Fasting Cookies, coffee/tea
+            </p>
+          </div>
+          <div class="price">600.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Water</h3>
-          <div class="price">100 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Mini Burgers (2 Pieces)</h3>
+          </div>
+          <div class="price">800.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Soft Drinks</h3>
-          <div class="price">20 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Water (600 ML)</h3>
+          </div>
+          <div class="price">100.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Fresh Juice</h3>
-          <div class="price">400 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Soft Drinks (500 ML)</h3>
+          </div>
+          <div class="price">200.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Coffee</h3>
-          <div class="price">200 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Fresh Juice</h3>
+          </div>
+          <div class="price">400.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Milk / Café Latte</h3>
-          <div class="price">300 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Coffee</h3>
+          </div>
+          <div class="price">200.00 <small>ETB</small></div>
         </div>
 
         <div class="item">
-          <h3>Tea</h3>
-          <div class="price">200 <small>ETB</small></div>
+          <div class="item-info">
+            <h3>Milk/Café Late</h3>
+          </div>
+          <div class="price">300.00 <small>ETB</small></div>
         </div>
+
+        <div class="item">
+          <div class="item-info">
+            <h3>Tea</h3>
+          </div>
+          <div class="price">200.00 <small>ETB</small></div>
+        </div>
+
       </div>
     </section>
 
     <p class="note">
-      Menu and prices are displayed as supplied for the event.
+      All prices are listed in Ethiopian Birr (ETB).
     </p>
 
   </main>
@@ -434,6 +539,25 @@
   <footer>
     <strong>METRO CATERING</strong>
     <p>We Cater, You Celebrate!</p>
+
+    <div class="contact">
+      <a href="https://www.metrocatering.net" target="_blank"
+         rel="noopener noreferrer">
+        www.metrocatering.net
+      </a>
+
+      <a href="mailto:info@metrocatering.net">
+        info@metrocatering.net
+      </a>
+
+      <a href="tel:+251976822222">
+        +251976822222
+      </a>
+
+      <a href="tel:+251977822222">
+        +251977822222
+      </a>
+    </div>
   </footer>
 
 </body>
